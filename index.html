@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnangOs – AI Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="container">
+      <h1 class="logo">AnangOs</h1>
+      <nav>
+        <a href="#foto-generator-section" class="nav-link">Foto Generator</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="main-title">
+      <h2>AI Image Generator</h2>
+      <p>Ciptakan karya visual menakjubkan dari gambar Anda dengan kekuatan AI.</p>
+    </div>
+
+    <section id="foto-generator-section" class="generator-card">
+      <h3>Foto Generator</h3>
+      <p class="description">Buat deskripsi detail untuk menghasilkan gambar komersial yang Anda butuhkan.</p>
+      
+      <div id="prompt-form">
+        <div class="form-group">
+          <label for="prompt-subject">Subjek Utama Gambar</label>
+          <input type="text" id="prompt-subject" class="form-control" placeholder="Contoh: seorang wanita sedang minum kopi, sebuah mobil sport di jalanan kota">
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="prompt-style">Gaya Gambar</label>
+            <select id="prompt-style" class="form-control">
+              <option value="photorealistic" selected>Fotorealistik</option>
+              <option value="cinematic">Sinematik</option>
+              <option value="3d render">3D Render</option>
+              <option value="minimalist">Minimalis</option>
+              <option value="watercolor">Lukisan Cat Air</option>
+              <option value="fantasy art">Seni Fantasi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="prompt-lighting">Pencahayaan</label>
+            <select id="prompt-lighting" class="form-control">
+              <option value="studio lighting" selected>Pencahayaan Studio</option>
+              <option value="golden hour">Golden Hour (Sore Hari)</option>
+              <option value="dramatic lighting">Dramatis</option>
+              <option value="soft light">Cahaya Lembut</option>
+              <option value="neon lighting">Lampu Neon</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prompt-details">Detail & Latar Belakang</label>
+          <input type="text" id="prompt-details" class="form-control" placeholder="Contoh: di kafe yang ramai, latar belakang putih polos, dengan tanaman tropis">
+        </div>
+        
+        <div class="form-group">
+            <label for="prompt-extra-details">Tambahan Detail Prompt</label>
+            <input type="text" id="prompt-extra-details" class="form-control" placeholder="Contoh: ultra-realistic, 8k, sharp focus, high quality">
+        </div>
+        </div>
+
+      <button id="generate-prompt-btn" class="btn-secondary">Generate Prompt (AI)</button>
+      <div id="generated-prompt-container" class="form-group hidden">
+          <label for="generated-prompt-field">Hasil Prompt dari AI:</label>
+          <textarea id="generated-prompt-field" class="form-control" rows="4"></textarea>
+      </div>
+
+      <button id="foto-generate-btn" class="btn-primary hidden">Generate Foto</button>
+      
+      <div id="foto-output" class="output-container"></div>
+      
+      <div class="action-buttons">
+        <button id="foto-download-btn" class="btn-secondary" disabled>Download</button>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="app-footer">
+    <p>&copy; 2025 ANANGoS. All rights reserved.</p>
+  </footer>
+
+  <script src="js/shared-utils.js"></script>
+  <script type="module" src="js/foto-generator.js"></script>
+</body>
+</html>
