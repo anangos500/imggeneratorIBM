@@ -1,0 +1,13 @@
+[build]
+  # Kita tidak perlu build command karena ini proyek statis
+  command = ""
+  # Folder yang akan dipublikasikan adalah 'public'
+  publish = "public"
+  # Lokasi Netlify Functions kita
+  functions = "netlify/functions"
+
+# Aturan ini mengalihkan semua permintaan dari /api/* ke Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
